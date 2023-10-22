@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="Simple demo of Vercel with Python serverless functions" />
+</head>
+
+<body style="font-family: product-sans;">
+    <br>
+
+    <p style="text-align: center; font-size: 2rem; font-weight: bold;">Vercel + Python</p>
+
+    <div style="display: flex">
+        <p style="flex:1.5"></p>
+        <img loading="lazy" alt="vercel" style="flex: 1" class="showcase_image vercel"
+            src="https://www.svgrepo.com/show/327408/logo-vercel.svg" width="30vh" height="auto" />
+        <img loading="lazy" alt="plus" style="flex: 1;" width="30vh"
+            src="https://www.svgrepo.com/show/353240/plus.svg" />
+        <img loading="lazy" alt="python" style="flex: 1" class="showcase_image python" width="30vh"
+            src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Python_icon_%28black_and_white%29.svg" />
+        <p style="flex:1.5"></p>
+    </div>
+    <br>
+
+    <!-- Import counter with htmx-->
+    <div hx-get="/counter" hx-trigger="load"></div>
+
+    <p style="text-align: center;"><a
+            href="https://pagespeed.web.dev/analysis/https-flask-test-project-vercel-app/6p4ehavytn?form_factor=mobile">Responsive,
+            fast and SEO friendly!</a></p>
+    <style>
+        @font-face {
+            font-family: product-sans;
+            src: url(/assets/ps-regular.ttf);
+            font-display: swap;
+        }
+    </style>
+</body>
+
+</html>

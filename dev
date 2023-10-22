@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+with open("api/backend.py", "r") as f:
+    exec(f.read())
+
+
+"""I'm aware that vercel dev exists, but the fact is that for every minor change I make to my code I have
+to kill the running server, restart it and wait for it to boot up. With this script instead, Flask reloads
+automatically when its code is modified, while all other non-python files are updated automatically anyway"""
