@@ -9,28 +9,17 @@
 </head>
 
 <body style="font-family: product-sans;">
-    <br>
 
-    <p style="text-align: center; font-size: 2rem; font-weight: bold;">Vercel + Python</p>
-
-    <div style="display: flex">
-        <p style="flex:1.5"></p>
-        <img loading="lazy" alt="vercel" style="flex: 1" class="showcase_image vercel"
-            src="https://www.svgrepo.com/show/327408/logo-vercel.svg" width="30vh" height="auto" />
-        <img loading="lazy" alt="plus" style="flex: 1;" width="30vh"
-            src="https://www.svgrepo.com/show/353240/plus.svg" />
-        <img loading="lazy" alt="python" style="flex: 1" class="showcase_image python" width="30vh"
-            src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Python_icon_%28black_and_white%29.svg" />
-        <p style="flex:1.5"></p>
+    <div hx-get="/board" hx-trigger="load, every 1s"></div>
+    <div style="position: fixed; bottom: 0; left: 0; display: flex; width: 100%;">
+        <input type="text" placeholder="Type your message..." style="flex: 9" name="chatbox" />
+        <div style="display: flex; justify-content: center;  padding: 0.50rem;" hx-post="/message" hx-include="[name='chatbox']" hx-swap="none">
+            <img src="https://cdn-icons-png.flaticon.com/512/3106/3106794.png"
+                style="width: 2rem; height: 2rem; filter: invert(1);" />
+        </div>
     </div>
-    <br>
 
-    <!-- Import counter with htmx-->
-    <div hx-get="/counter" hx-trigger="load"></div>
 
-    <p style="text-align: center;"><a
-            href="https://pagespeed.web.dev/analysis/https-flask-test-project-vercel-app/6p4ehavytn?form_factor=mobile">Responsive,
-            fast and SEO friendly!</a></p>
     <style>
         @font-face {
             font-family: product-sans;
