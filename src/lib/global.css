@@ -1,0 +1,13 @@
+body {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#send:hover {
+    background-color: var(--primary);
+    transition: 0.3s;
+}
+
+#send {
+    transition: 0.3s;
+}

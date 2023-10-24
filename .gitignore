@@ -2,6 +2,7 @@
 *.log
 *.pyc
 __pycache__
+test.py
 
 # Environments 
 .env 

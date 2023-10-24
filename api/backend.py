@@ -11,7 +11,7 @@ message_path = "messages"
 def messages():
     data = {
         "message": request.form.to_dict().get("chatbox"),
-        "date": str(datetime.now().strftime("%H:%M"))
+        "date": str(datetime.now().strftime("%d %m - %H:%M"))
     }
     print(database_post(message_path, data))
     return "OK"
@@ -20,13 +20,13 @@ def messages():
 def serve():
     data = json.loads(database_get("messages?page-size=20").replace("'", '"'))
     html_messages = []
+    messages = [(value['date'], value['message']) for key, value in data['data'].items()]
+    messages.sort(key=lambda x: x[0])
 
-    for key, value in data['data'].items():
-        date = value['date']
-        message = value['message']
+    for date, message in messages:
         formatted_message = f"{date} - {message}"
-        html_message = f"<p>{formatted_message}</p>"
-        html_messages.insert(0, html_message)
+        html_message = f"<article><p>{formatted_message}</p></article>"
+        html_messages.append(html_message)
 
     html_output = ''.join(html_messages)
 

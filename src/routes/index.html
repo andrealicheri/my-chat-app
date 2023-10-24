@@ -10,13 +10,16 @@
 
 <body style="font-family: product-sans;">
 
-    <div hx-get="/board" hx-trigger="load, every 1s"></div>
+    <div hx-get="/board" hx-trigger="load, every 4s"></div>
     <div style="position: fixed; bottom: 0; left: 0; display: flex; width: 100%;">
         <input type="text" placeholder="Type your message..." style="flex: 9" name="chatbox" />
-        <div style="display: flex; justify-content: center;  padding: 0.50rem;" hx-post="/message" hx-include="[name='chatbox']" hx-swap="none">
-            <img src="https://cdn-icons-png.flaticon.com/512/3106/3106794.png"
-                style="width: 2rem; height: 2rem; filter: invert(1);" />
+        <div style="display: flex; justify-content: center;  padding: 0.30rem;" hx-post="/message"
+            hx-include="[name='chatbox']" hx-swap="none">
+            <img id="send" src="https://static-00.iconduck.com/assets.00/send-icon-2048x2048-p9sbekfk.png"
+                style="width: 3rem; height: 3rem; padding: 0.5rem; border-radius: 10px ;" />
         </div>
+
+    </div>
     </div>
 
 
